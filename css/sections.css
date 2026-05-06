@@ -180,3 +180,23 @@
         column-count: 1;
     }
 }
+
+/* Additional Mobile Refinements */
+@media (max-width: 640px) {
+    .hero-h1 {
+        font-size: 40px;
+    }
+    .about-image {
+        height: 350px;
+    }
+    .card {
+        padding: 24px;
+    }
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .hero-btns {
+        flex-direction: column;
+    }
+}
