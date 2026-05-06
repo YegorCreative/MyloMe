@@ -1,0 +1,182 @@
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-deep);
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, var(--bg-deep) 0%, transparent 100%),
+                radial-gradient(circle at 70% 30%, rgba(189, 0, 255, 0.1), transparent 50%);
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(48px, 10vw, 100px);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+}
+
+.hero-tagline {
+    font-size: clamp(18px, 2vw, 24px);
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+/* About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-image-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.about-image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+/* Content Hub */
+.hub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 300px;
+    gap: 24px;
+}
+
+.hub-card-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Music Section */
+.music-track {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-fast);
+}
+
+.music-track:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.track-num {
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+}
+
+/* Creative Gallery */
+.gallery-masonry {
+    column-count: 3;
+    column-gap: 24px;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 24px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* The World of Mylo */
+.world-section {
+    background: radial-gradient(circle at 50% 50%, rgba(0, 209, 255, 0.05) 0%, transparent 70%);
+}
+
+.world-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.world-text {
+    font-size: 20px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .hub-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 640px) {
+    .hub-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+    .hub-card-large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .gallery-masonry {
+        column-count: 1;
+    }
+}
